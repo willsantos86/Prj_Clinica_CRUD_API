@@ -23,6 +23,7 @@ class Paciente(models.Model):
     genero = models.CharField(max_length=10, verbose_name='Gênero', choices=Lista_genero)
     cpf = models.CharField(max_length=11, verbose_name='CPF')
     data_nascimento = models.DateField(verbose_name='Data Nascimento')
+    prontuario = models.TextField(verbose_name='Prontuário', default='Sem registros')
     def __str__(self):
         return self.nome_paciente
 
@@ -31,5 +32,6 @@ class Consulta(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, verbose_name='Especialidade')
     medico = models.ForeignKey(Medico, on_delete=models.CASCADE, verbose_name='Médico')
     data = models.DateField()
+    observacao = models.TextField(verbose_name='Observações', blank=True)
     def __str__(self):
-        return f'{self.paciente} - {self.medico} - {self.categoria}'
+        return f'PACIENTE: {self.paciente} - MÉDICO(a): {self.medico} - ESPECIALIDADE: {self.categoria}'
