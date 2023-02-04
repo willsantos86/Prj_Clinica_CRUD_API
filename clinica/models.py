@@ -6,7 +6,7 @@ class Categoria(models.Model):
         return self.nome_categoria
 
 class Medico(models.Model):
-    nome_medico = models.CharField(max_length=50, verbose_name='Nome')
+    nome_medico = models.CharField(max_length=50, verbose_name='Nome do Médico')
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE, verbose_name='Especialidade')
     matricula = models.CharField(max_length=30)
     def __str__(self):
@@ -28,9 +28,9 @@ class Paciente(models.Model):
         return self.nome_paciente
 
 class Consulta(models.Model):
-    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE, verbose_name='Paciente')
+    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE, verbose_name='Nome do Paciente')
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, verbose_name='Especialidade')
-    medico = models.ForeignKey(Medico, on_delete=models.CASCADE, verbose_name='Médico')
+    medico = models.ForeignKey(Medico, on_delete=models.CASCADE, verbose_name='Nome do Médico')
     data = models.DateField()
     observacao = models.TextField(verbose_name='Observações', blank=True)
     def __str__(self):
