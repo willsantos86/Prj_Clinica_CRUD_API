@@ -1,6 +1,6 @@
 
 from django.views.generic import TemplateView
-from django.views.generic.edit import CreateView,UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import Paciente, Consulta, Categoria, Medico
 
@@ -35,7 +35,7 @@ class ConsultaCreate(CreateView):
     template_name = 'clinica/form.html'
     success_url = reverse_lazy('inicio')
 
-    ################ Update ##################
+################ Update ##################
 
 class CategoriaUpdate(UpdateView):
     model = Categoria
@@ -59,4 +59,26 @@ class ConsultaUpdate(UpdateView):
     model = Consulta
     fields = '__all__'
     template_name = 'clinica/form.html'
+    success_url = reverse_lazy('inicio')
+
+################ Delete ##################
+
+class CategoriaDelete(DeleteView):
+    model = Categoria
+    template_name = 'clinica/form-excluir.html'
+    success_url = reverse_lazy('inicio')
+
+class MedicoDelete(DeleteView):
+    model = Categoria
+    template_name = 'clinica/form-excluir.html'
+    success_url = reverse_lazy('inicio')
+
+class PacienteDelete(DeleteView):
+    model = Categoria
+    template_name = 'clinica/form-excluir.html'
+    success_url = reverse_lazy('inicio')
+
+class ConsultaDelete(DeleteView):
+    model = Categoria
+    template_name = 'clinica/form-excluir.html'
     success_url = reverse_lazy('inicio')
