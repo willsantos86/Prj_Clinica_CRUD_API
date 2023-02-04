@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import PaginaInicial, PacienteCreate, ConsultaCreate, MedicoCreate, CategoriaCreate
 from .views import PacienteUpdate, ConsultaUpdate, MedicoUpdate, CategoriaUpdate
+from .views import PacienteDelete, ConsultaDelete, MedicoDelete, CategoriaDelete
 
 
 urlpatterns = [
@@ -10,9 +11,14 @@ urlpatterns = [
     path('clinica/medico/', MedicoCreate.as_view(), name='cadastrar-medico'),
     path('clinica/categoria/', CategoriaCreate.as_view(), name='cadastrar-categoria'),
 
-    path('editar/paciente/<int:pk>/',PacienteUpdate.as_view(),name='editar-paciente'),
-    path('editar/consulta/<int:pk>/',ConsultaUpdate.as_view(),name='editar-consulta'),
-    path('editar/medico/<int:pk>/',MedicoUpdate.as_view(),name='editar-medico'),
-    path('editar/categoria/<int:pk>/',CategoriaUpdate.as_view(),name='editar-categoria'),
+    path('editar/paciente/<int:pk>/', PacienteUpdate.as_view(),name='editar-paciente'),
+    path('editar/consulta/<int:pk>/', ConsultaUpdate.as_view(),name='editar-consulta'),
+    path('editar/medico/<int:pk>/', MedicoUpdate.as_view(),name='editar-medico'),
+    path('editar/categoria/<int:pk>/', CategoriaUpdate.as_view(),name='editar-categoria'),
+
+    path('excluir/paciente/<int:pk>/' ,PacienteDelete.as_view(),name='excluir-paciente'),
+    path('excluir/consulta/<int:pk>/', ConsultaDelete.as_view(),name='excluir-consulta'),
+    path('excluir/medico/<int:pk>/', MedicoDelete.as_view(),name='excluir-medico'),
+    path('excluir/categoria/<int:pk>/', CategoriaDelete.as_view(),name='excluir-categoria'),
     
 ]
