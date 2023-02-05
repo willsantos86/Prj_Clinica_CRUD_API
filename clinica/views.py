@@ -1,6 +1,7 @@
 
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.list import ListView
 
 from .models import Paciente, Consulta, Categoria, Medico
 
@@ -82,3 +83,21 @@ class ConsultaDelete(DeleteView):
     model = Categoria
     template_name = 'clinica/form-excluir.html'
     success_url = reverse_lazy('inicio')
+
+################ Lista ##################
+
+class CategoriaList(ListView):
+    model = Categoria
+    template_name = 'clinica/lista/categoria.html'
+
+class MedicoList(ListView):
+    model = Medico
+    template_name = 'clinica/lista/medico.html'
+
+class PacienteList(ListView):
+    model = Paciente
+    template_name = 'clinica/lista/medico.html'
+
+class ConsultaList(ListView):
+    model = Paciente
+    template_name = 'clinica/lista/consulta.html'
