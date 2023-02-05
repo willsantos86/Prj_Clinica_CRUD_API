@@ -16,25 +16,25 @@ class CategoriaCreate(CreateView):
     model = Categoria
     fields = ['nome_categoria']
     template_name = 'clinica/form.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('listar-categoria')
 
 class MedicoCreate(CreateView):
     model = Medico
     fields = '__all__'
     template_name = 'clinica/form.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('listar-medico')
 
 class PacienteCreate(CreateView):
     model = Paciente
     fields = '__all__'
     template_name = 'clinica/form.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('listar-paciente')
 
 class ConsultaCreate(CreateView):
     model = Consulta
     fields = '__all__'
     template_name = 'clinica/form.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('listar-consulta')
 
 ################ Update ##################
 
@@ -42,47 +42,47 @@ class CategoriaUpdate(UpdateView):
     model = Categoria
     fields = '__all__'
     template_name = 'clinica/form.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('listar-categoria')
 
 class MedicoUpdate(UpdateView):
     model = Medico
     fields = '__all__'
     template_name = 'clinica/form.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('listar-medico')
 
 class PacienteUpdate(UpdateView):
     model = Paciente
     fields = '__all__'
     template_name = 'clinica/form.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('listar-paciente')
 
 class ConsultaUpdate(UpdateView):
     model = Consulta
     fields = '__all__'
     template_name = 'clinica/form.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('listar-consulta')
 
 ################ Delete ##################
 
 class CategoriaDelete(DeleteView):
     model = Categoria
     template_name = 'clinica/form-excluir.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('listar-categoria')
 
 class MedicoDelete(DeleteView):
     model = Categoria
     template_name = 'clinica/form-excluir.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('listar-medico')
 
 class PacienteDelete(DeleteView):
     model = Categoria
     template_name = 'clinica/form-excluir.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('listar-paciente')
 
 class ConsultaDelete(DeleteView):
     model = Categoria
     template_name = 'clinica/form-excluir.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('listar-consulta')
 
 ################ Lista ##################
 
