@@ -5,11 +5,13 @@
 {% block menu %}
 <div class="container">
     <div class="p-4 p-md-2 mb-2 rounded text-bg-dark">
-        <div class="col-md-6 px-0">
-            <h3 class="display-4 fst-italic">Lista</h3>
+        <div class="col-md-11 px-0">
+            <h6 class="display-4 fst-italic text text-center" style="font-size: 25px;">Lista de Especialidades</h6>
         </div>
     </div>
-    <p class="mb-5">Lista de registros.</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{% url 'cadastrar-categoria' %}" class="mb-3 btn btn-outline-dark">Cadastrar Novo</a>
+        </div>
     <div class="table-responsive">
 
         <table class="table table-striped">
