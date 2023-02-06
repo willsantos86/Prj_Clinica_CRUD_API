@@ -11,7 +11,7 @@
 <p class="mb-5">Confirme os dados antes de excluir definitivamente!</p>
 
     <form action="" method="POST" class="mb-5">
-        <p class="rounded text bg-primary col-4 p-2">Deseja excluir o registro: <b>{{ object }}</b></p>
+        <p class="rounded col-10 p-2"> Deseja excluir o registro: <strong>{{ object }}</strong>?</p>
         {% csrf_token %}
 
         {{form.as_p}}

@@ -70,17 +70,17 @@ class CategoriaDelete(DeleteView):
     success_url = reverse_lazy('listar-categoria')
 
 class MedicoDelete(DeleteView):
-    model = Categoria
+    model = Medico
     template_name = 'clinica/form-excluir.html'
     success_url = reverse_lazy('listar-medico')
 
 class PacienteDelete(DeleteView):
-    model = Categoria
+    model = Paciente
     template_name = 'clinica/form-excluir.html'
     success_url = reverse_lazy('listar-paciente')
 
 class ConsultaDelete(DeleteView):
-    model = Categoria
+    model = Consulta
     template_name = 'clinica/form-excluir.html'
     success_url = reverse_lazy('listar-consulta')
 
@@ -96,8 +96,8 @@ class MedicoList(ListView):
 
 class PacienteList(ListView):
     model = Paciente
-    template_name = 'clinica/lista/medico.html'
+    template_name = 'clinica/lista/paciente.html'
 
 class ConsultaList(ListView):
-    model = Paciente
+    model = Consulta
     template_name = 'clinica/lista/consulta.html'
