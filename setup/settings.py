@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'clinica',
+    'clinica.apps.ClinicaConfig',
+    'usuarios.apps.UsuariosConfig',
     'crispy_forms',
+   
 ]
 
 # Crispy Forms
@@ -133,3 +135,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Configuração de Autenticação
+
+LOGIN_REDIRECT_URL = 'inicio'
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_URL = 'login'

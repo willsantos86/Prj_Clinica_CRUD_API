@@ -1,0 +1,24 @@
+{% extends 'clinica/index.html' %}
+{%load static %}
+{% load crispy_forms_tags %}
+
+{% block menu %}
+<div class="col-5 m-auto mb-2 p-2"">
+    <div class="p-4 p-md-2 mb-4 rounded text-bg-dark"">
+        <div class="col-md-11 px-0">
+            <h5 class="display-4 fst-italic text text-center"  style="font-size: 25px;">Autenticação</h5>
+        </div>
+    </div>
+
+    <form action="" method="POST" class="m-2">
+        
+        
+        {% csrf_token %}
+
+        {{ form|crispy }}
+
+    <button type="submit" class="btn btn-primary my-5"> Entrar </button>
+
+    </form>
+</div>
+{% endblock %}

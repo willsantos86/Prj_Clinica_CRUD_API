@@ -8,7 +8,7 @@ from .views import PacienteList, ConsultaList, MedicoList, CategoriaList
 
 
 urlpatterns = [
-    path('', PaginaInicial.as_view(), name='inicio'),
+    path('inicio/', PaginaInicial.as_view(), name='inicio'),
     path('clinica/paciente/', PacienteCreate.as_view(), name='cadastrar-paciente'),
     path('clinica/consulta/', ConsultaCreate.as_view(), name='cadastrar-consulta'),
     path('clinica/medico/', MedicoCreate.as_view(), name='cadastrar-medico'),

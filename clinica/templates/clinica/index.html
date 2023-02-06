@@ -71,13 +71,13 @@
   <body>
     
 <div class="container">
-  <header class="blog-header lh-1 py-3">
+  <header class="blog-header lh-1 py-3 mb-3">
     <div class="row flex-nowrap justify-content-between align-items-center">
       <!-- <div class="col-4 pt-1">
         <a class="link-secondary" href="#">Subscribe</a>
       </div> -->
       <div class="col-4">
-        <h1 class="blog-header-logo text-dark">TechCli</h1>
+        <h1 class="blog-header-logo text-dark">TechClin</h1>
       </div>
       <!-- <div class="col-4 d-flex justify-content-end align-items-center">
         <a class="link-secondary" href="#" aria-label="Search">
@@ -87,16 +87,20 @@
       </div> -->
     </div>
   </header>
-
+  {% if request.user.is_authenticated %}
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
       <a class="p-2 link-secondary" href="{% url 'inicio' %}">Inicio</a>
       <a class="p-2 link-secondary" href="{% url 'listar-consulta' %}">Consultas Agendadas</a>
-      <a class="p-2 link-secondary" href="{% url 'listar-paciente' %}">Registro de Pacientes</a>
-      <a class="p-2 link-secondary" href="{% url 'listar-medico' %}">Médicos</a>
+      <a class="p-2 link-secondary" href="{% url 'listar-paciente' %}">Registros de Pacientes</a>
+      <a class="p-2 link-secondary" href="{% url 'listar-medico' %}">Registros Médicos</a>
       <a class="p-2 link-secondary" href="{% url 'listar-categoria' %}">Especialidades</a>
+      <a class="p-2 link-primary" href="{% url 'logout' %}">Sair</a>
     </nav>
   </div>
+{% else %}
+<p>Para entrar, digite seu usuário e sua senha nos campos abaixo!</p>
+{% endif %}
 </div>
 
 
@@ -105,8 +109,10 @@
   <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
     <div class="col-md-6 px-0">
       <h1 class="display-10 fst-italic">Sistema de Gerenciamento Clínico Operacional</h1>
-      <p class="lead my-3">Marcação de consultas e exames<br>Registro de pacientes<br>Registro de Médicos</p>
-      <p class="lead mb-0">Faça seu <a href="#" class="text-primary fw-bold">Login</a></p>
+      <p class="lead"><a href="{% url 'cadastrar-consulta' %}">Marcação de consultas e exames</a></p>
+      <p class="lead"><a href="{% url 'cadastrar-paciente' %}">Cadastrar pacientes</a></p>
+      <P class="lead"><a href="{% url 'cadastrar-medico' %}">Cadastrar Médicos</a></p>
+     <!--  <p class="lead mb-0">Faça seu <a href="{% url 'login' %}" class="text-primary fw-bold">Login</a></p> -->
     </div>
   </div>
 </main>
