@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Categoria(models.Model):
     nome_categoria = models.CharField(max_length=30, verbose_name='Especialidade')
@@ -24,6 +25,7 @@ class Paciente(models.Model):
     cpf = models.CharField(max_length=11, verbose_name='CPF')
     data_nascimento = models.DateField(verbose_name='Data Nascimento')
     prontuario = models.TextField(verbose_name='Prontuário', default='Sem registros')
+    
     def __str__(self):
         return self.nome_paciente
 
@@ -33,5 +35,6 @@ class Consulta(models.Model):
     medico = models.ForeignKey(Medico, on_delete=models.CASCADE, verbose_name='Nome do Médico')
     data = models.DateField()
     observacao = models.TextField(verbose_name='Observações', blank=True)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     def __str__(self):
         return f'PACIENTE: {self.paciente} - MÉDICO(a): {self.medico} - ESPECIALIDADE: {self.categoria}'

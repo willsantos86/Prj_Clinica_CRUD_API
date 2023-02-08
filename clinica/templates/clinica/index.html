@@ -69,7 +69,7 @@
     <link href="{% static 'css/blog.css' %}" rel="stylesheet">
   </head>
   <body>
-    
+    {% if request.user.is_authenticated %}
 <div class="container">
   <header class="blog-header lh-1 py-3 mb-3">
     <div class="row flex-nowrap justify-content-between align-items-center">
@@ -79,15 +79,15 @@
       <div class="col-4">
         <h1 class="blog-header-logo text-dark">TechClin</h1>
       </div>
-      <!-- <div class="col-4 d-flex justify-content-end align-items-center">
-        <a class="link-secondary" href="#" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-        </a>
-        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-      </div> -->
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+        </svg>  {{ request.user }}</p>
+      </div>
     </div>
   </header>
-  {% if request.user.is_authenticated %}
+  
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
       <a class="p-2 link-secondary" href="{% url 'inicio' %}">Inicio</a>
@@ -99,7 +99,10 @@
     </nav>
   </div>
 {% else %}
-<p>Para entrar, digite seu usuário e sua senha nos campos abaixo!</p>
+<div class="container p-2 rounded text-bg-dark text text-center">
+  <p >Para entrar, digite seu usuário e sua senha nos campos abaixo!</p>
+</div>
+
 {% endif %}
 </div>
 

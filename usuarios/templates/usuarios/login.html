@@ -4,10 +4,10 @@
 
 {% block menu %}
 <div class="col-5 m-auto mb-2 p-2"">
-    {% if request.user.is_authenticated %}
-        <h5 style="text-align: center;"> Atenção!! Ação não permitida!</h5>
+    
     <div class="p-4 p-md-2 mb-4 rounded text-bg-dark"">
-        
+        {% if request.user.is_authenticated %}
+        <h5 style="text-align: center;"> Atenção!! Ação não permitida!</h5>
         <p class="lead">
             <strong>
                 Houve algum problema para processar a ação desejada ou você não tem permissão para esta ação?
