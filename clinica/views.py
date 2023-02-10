@@ -46,6 +46,11 @@ class ConsultaCreate(LoginRequiredMixin, CreateView):
     template_name = 'clinica/form.html'
     success_url = reverse_lazy('listar-consulta')
 
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        url = super().form_valid(form)
+        return url
+
 ################ Update ##################
 
 class CategoriaUpdate(LoginRequiredMixin, UpdateView):
