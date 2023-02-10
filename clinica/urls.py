@@ -28,5 +28,7 @@ urlpatterns = [
     path('listar/consulta/', ConsultaList.as_view(), name='listar-consulta'),
     path('listar/medico/', MedicoList.as_view(), name='listar-medico'),
     path('listar/categoria/', CategoriaList.as_view(), name='listar-categoria'),
+
+    
     
 ]

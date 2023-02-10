@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'clinica.apps.ClinicaConfig',
     'usuarios.apps.UsuariosConfig',
+    'rest_framework',
     'crispy_forms',
+    'clinica_api',
    
 ]
 
@@ -141,3 +143,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'inicio'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
+
